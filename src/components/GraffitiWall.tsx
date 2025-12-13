@@ -223,9 +223,24 @@ const GraffitiWall: React.FC = () => {
         }
 
         @media (max-width: 768px) {
-            .wall-interface { flex-direction: column; }
-            .toolbox { flex-direction: row; flex-wrap: wrap; justify-content: center; }
-            .wall-area { height: 300px; }
+            .graffiti-section { padding: 2rem 1rem; }
+            .wall-interface { 
+                flex-direction: column-reverse; /* Put toolbox BELOW wall for better UX, or keep column */
+                flex-direction: column;
+                height: auto;
+            }
+            .toolbox { 
+                flex-direction: row; 
+                flex-wrap: wrap; 
+                justify-content: center;
+                width: 100%;
+                flex: none;
+            }
+            .wall-area { 
+                flex: none;
+                width: 100%;
+                height: 350px; 
+            }
         }
       `}</style>
         </section>

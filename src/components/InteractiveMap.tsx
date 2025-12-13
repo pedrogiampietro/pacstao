@@ -298,15 +298,34 @@ const InteractiveMap: React.FC = () => {
         }
 
         @media (max-width: 900px) {
+          .map-section {
+            min-height: auto;
+            padding: 2rem 1rem;
+            display: block; /* Remove flex centering constraint */
+          }
           .map-wrapper {
+            display: flex;
             flex-direction: column;
             height: auto;
+            width: 100%;
+            gap: 2rem;
           }
           .map-container {
-            height: 400px;
+            flex: none; /* Disable flex scaling */
+            width: 100%;
+            height: 300px; /* Reduced height for better fit */
+            order: -1; /* Ensure it stays on top */
           }
           .detail-panel {
-            min-height: 300px;
+            flex: none;
+            width: 100%;
+            min-height: 250px;
+          }
+          .section-title {
+            position: relative; /* Reset absolute positioning */
+            top: 0;
+            margin-bottom: 2rem;
+            text-align: center;
           }
         }
       `}</style>
